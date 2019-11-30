@@ -159,7 +159,7 @@ class MyWindow(QMainWindow):
 def window():
     app = QApplication(sys.argv)
     win = MyWindow()
-    win.show()
+    #win.show()
     sys.exit(app.exec_())
 
 window()

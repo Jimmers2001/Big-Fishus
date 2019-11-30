@@ -118,9 +118,8 @@ class MyWindow(QMainWindow):
 
     def initUI(self):
 
-        self.WIDTH = 1200
-        self.HEIGHT = 600
-        self.setGeometry(0, 0, self.WIDTH, self.HEIGHT) 
+        self.showMaximized()
+        self.show()
         self.setWindowTitle("Big Fishus") 
 
         self.define_Main_menu_buttons()
@@ -128,6 +127,7 @@ class MyWindow(QMainWindow):
 
         self.define_Statistics_buttons() 
         self.define_Statistics_labels() #mostly this
+        self.Show_Main_Menu()
 
         
 
@@ -140,26 +140,20 @@ class MyWindow(QMainWindow):
     '''
     TITLE OF GAME (BIG FISHUS) in big text
     #TODO: fish being chased by bigger fish consistently, chasing a smaller fish
-
-
     PLAY BUTTON - move onto a clear canvas
     SETTINGS BUTTON (volume ofc) move to a different window, with a volume
     scrubber and a number that represents the volume
-
     STATS BUTTON:
         #number of fish eaten.
         #deaths.
-
     QUIT BUTTON
-
-
     '''
 
 
 def window():
     app = QApplication(sys.argv)
     win = MyWindow()
-    #win.show()
+    win.show()
     sys.exit(app.exec_())
 
 window()

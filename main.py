@@ -1,6 +1,8 @@
 from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
 from PyQt5 import *
-import sys
+import sys, random
 
 
 class MyWindow(QMainWindow):
@@ -58,7 +60,21 @@ class MyWindow(QMainWindow):
         self.Show_Main_Menu()
 
     def PLAY_GAME(self):
+        self.Hide_Main_Menu()
+        self.Show_Play()
+
         print("u clc pay")
+
+
+    def paintEvent(self, event):
+        painter = QPainter(self)
+        painter.drawLine(0, 0, 100, 100)
+
+    def Show_Play(self):
+        self.paintEvent(100)
+
+    def Hide_Play(self):
+        pass
 
     def define_Main_menu_buttons(self):
 
